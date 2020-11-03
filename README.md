@@ -66,3 +66,19 @@ def funcao_listar():
             tela_listar.tableWidget.setItem(i,j,QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
 
 ```
+
+# Second Scene - Delete
+In the Second Scene we can see the button "excluir", basically this delete the data in the current row that your selected.
+
+
+
+```
+linha = tela_listar.tableWidget.currentRow()
+    tela_listar.tableWidget.removeRow(linha)
+
+    cursor = bd.cursor()
+    cursor.execute("SELECT id FROM jogos")
+    dados_lidos = cursor.fetchall()
+    valor_id = dados_lidos[linha][0]
+    cursor.execute("DELETE FROM jogos WHERE id="+ str(valor_id))
+```
