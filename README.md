@@ -45,6 +45,7 @@ def funcao_principal():
 # Second Scene
 In the First Scene we can see the button "Listar Jogos" that basically check all dados we insert previously.
 
+![2](https://user-images.githubusercontent.com/73801769/98026761-617bfb00-1dea-11eb-9b2d-a881e009e0d7.png)
 
 ```
 # Definindo função de listar para o Banco de Dados - MySQL.
