@@ -70,7 +70,7 @@ def funcao_listar():
 # Second Scene - Delete
 In the Second Scene we can see the button "excluir", basically this delete the data in the current row that your selected.
 
-
+![4](https://user-images.githubusercontent.com/73801769/98028082-56c26580-1dec-11eb-8bd3-5948d79e8537.png)
 
 ```
 linha = tela_listar.tableWidget.currentRow()
@@ -82,3 +82,5 @@ linha = tela_listar.tableWidget.currentRow()
     valor_id = dados_lidos[linha][0]
     cursor.execute("DELETE FROM jogos WHERE id="+ str(valor_id))
 ```
+
+
