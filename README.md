@@ -115,3 +115,9 @@ def update_games():
     except:
         print('Este jogo não está em nossa biblioteca')
 ```
+
+# MySQL - database
+
+here we can see that is working perfectly.
+
+![MySQL](https://user-images.githubusercontent.com/73801769/98028927-8a51bf80-1ded-11eb-9b70-4f263bf7f7f4.png)
