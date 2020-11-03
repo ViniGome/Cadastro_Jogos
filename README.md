@@ -5,7 +5,7 @@ I make this project just to traine my MySQL and python skills, using some basic 
 
 # First scene 
 
-In the first scene, we can insert new dados for MySQL Server.
+In the First Scene, we can insert new data for MySQL Server.
 
 ![1](https://user-images.githubusercontent.com/73801769/98025092-0812cc80-1de8-11eb-8738-9c47499aa388.png)
 
@@ -43,7 +43,7 @@ def funcao_principal():
 ```
 
 # Second Scene
-In the First Scene we can see the button "Listar Jogos" pressing this button open the Second Scene that basically check all dados we insert previously.
+In the First Scene we can see the button "Listar Jogos" pressing this button open the Second Scene that basically check all data we insert previously.
 
 ![2](https://user-images.githubusercontent.com/73801769/98026761-617bfb00-1dea-11eb-9b2d-a881e009e0d7.png)
 
@@ -83,4 +83,35 @@ linha = tela_listar.tableWidget.currentRow()
     cursor.execute("DELETE FROM jogos WHERE id="+ str(valor_id))
 ```
 
+# Third Scene
+Previously in the Second Scene we can see the "Alterar" button, when we press the program change for the Third Scene, and in this scene we can update all data we insert previosly.
 
+![3](https://user-images.githubusercontent.com/73801769/98026773-65a81880-1dea-11eb-94cc-af43b9ad22ef.png)
+
+```
+# Fazer UPDATE no Banco de Dados - MySQL.
+def update_games():
+
+    codigo = tela_update.lineEdit.text()
+    jogo = tela_update.lineEdit_2.text()
+    preco = tela_update.lineEdit_3.text()
+    
+    plataforma = ""
+
+    if tela_update.radioButton.isChecked():
+        plataforma = "Playstation"
+    elif tela_update.radioButton_2.isChecked():
+        plataforma = "Xbox"
+    elif tela_update.radioButton_3.isChecked():
+        plataforma = "PC"
+    else:
+        plataforma = "Nintendo"
+
+    try:
+        cursor = bd.cursor()
+        fun_SQL = (f"UPDATE jogos SET jogo = '{jogo}', preco = '{preco}', plataforma = '{plataforma}' WHERE codigo = '{codigo}';")
+        cursor.execute(fun_SQL)
+        bd.commit()
+    except:
+        print('Este jogo não está em nossa biblioteca')
+```
