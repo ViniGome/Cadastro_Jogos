@@ -14,6 +14,7 @@ bd = mysql.connector.connect(
 )
 # Definindo a função de cadastro de novos Jogos.
 def funcao_principal():
+
     line1 = tela_cadastrar.lineEdit_3.text()
     line2 = tela_cadastrar.lineEdit_4.text()
     line3 = tela_cadastrar.lineEdit_5.text()
@@ -26,15 +27,15 @@ def funcao_principal():
         plataforma ="Xbox"
     elif tela_cadastrar.radioButton_3.isChecked() :
         plataforma ="PC"
-    else :
+    else:
         plataforma = "Nintendo"
 
 
 # Comando para introduzir ao banco de dados os novos valores.
     cursor = bd.cursor()
     fun_SQL = "INSERT INTO jogos (codigo,jogo,preco,plataforma) VALUES (%s,%s,%s,%s)"
-    dados = (str(line1),str(line2),str(line3),plataforma)
-    cursor.execute(fun_SQL,dados)
+    dados = (str(line1), str(line2), str(line3), plataforma)
+    cursor.execute(fun_SQL, dados)
     bd.commit()
 
 # Limpando o campo de digitação
@@ -44,6 +45,7 @@ def funcao_principal():
 
 # Definindo função de listar para o Banco de Dados - MySQL.
 def funcao_listar():
+
     tela_listar.show()
     tela_cadastrar.close()
 
@@ -61,14 +63,17 @@ def funcao_listar():
 
 # Fazer a troca de layout de forma limpa.
 def tela_change():
+
     tela_update.show()
     tela_listar.close()
 
 def tela_change2():
+
     tela_listar.close()
     tela_cadastrar.show()
 
 def tela_change3():
+
     tela_update.close()
     tela_listar.show()
 
@@ -98,7 +103,7 @@ def update_games():
         print('Este jogo não está em nossa biblioteca')
 
     tela_update.close()
-    tela_listar.show()
+    tela_cadastrar.show()
 
 # Definindo a função deletar no Banco de Dados - MySQL.
 def delete_dados():
